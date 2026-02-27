@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+     #myDiv {
+      width: 1520px;
+      height: 100px;
+      background-color: lightgreen;
+      position: relative; /* Permite mover a div com a propriedade 'left' */
+      margin-top: 20px;
+     }
+
+    </style>
+    <!-- Botão para contar os clicks e mudar a cor -->
+     <button id="myButton">Cliks</button>
+
+    <p id="contadorTexto">Contador: 0</p>
+
+     <!-- Div que vai mudar de cor -->
+    <div id="myDiv"></div>
+
+    <script>
+        // constante para selecionar o botão e a div
+        const button = document.querySelector('#myButton');
+        const div = document.querySelector('#myDiv');
+        const contadorTexto = document.querySelector('#contadorTexto');
+
+        // Variável para contar os cliques
+        let contador = 0; 
+
+        // Adiciona um evento de clique ao botão
+        button.addEventListener('click', () => {
+            // Incrementa o contador a cada clique
+            contador++;
+
+            // Atualiza o texto do contador
+            contadorTexto.textContent = `Contador: ${contador}`;
+
+             // Verifica se o contador é par ou ímpar e muda a cor da div
+            if (contador % 2 === 0) {
+                // Cor para cliques pares
+                div.style.backgroundColor = 'lightgreen'; 
+            } else {
+                // Cor para cliques ímpares
+                div.style.backgroundColor = 'lightpink'; 
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

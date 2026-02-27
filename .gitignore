@@ -1,0 +1,9 @@
+# Documentação Técnica (Explicações)
+JavaScript Introducao.pdf
+
+# Ignora quaisquer outros PDFs que possam ser adicionados
+*.pdf
+
+# Configurações de IDE (VS Code)
+.vscode/
+

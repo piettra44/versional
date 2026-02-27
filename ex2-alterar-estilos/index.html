@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando estilos com Dom</title>
+
+    <!-- CSS interno -->
+     <style>
+        #minhaDiv {
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            margin-top: 20px;
+        }
+     </style>
+</head>
+<body>
+    <!-- Botão para mudar a cor da div -->
+     <button id="meuBotão">Mudar cor</button>
+    
+    <!-- Div que terá sua cor de fundo alterada via DOM no JS -->
+     <div id="minhaDiv"></div>
+
+    <!-- JS interno -->
+     <script>
+        // Seleção 
+        const botão = document.querySelector('#meuBotão');
+        const div = document.querySelector('#minhaDiv');
+
+        // // Adição de evento (Clique) para monitorar
+        // botão.addEventListener('click' , () => {
+        //     // Verificar cor atual e troca entre (aqua e ligthcoral)
+
+        //     // Estrutura condicional (tradicional)
+        //     if (div.style.backgroundColor === 'aqua') {
+        //         div.style.backgroundColor = 'lightcoral';
+        //     } else {
+        //         div.style.backgroundColor = 'aqua'
+        //     }
+
+        // })
+
+        // Estrutura condicional (Terário) "Moderno mais completa"
+        botão.addEventListener('click' , () => {
+            div.style.backgroundColor =
+                div.style.backgroundColor === "aqua" ? div.style.backgroundColor = 'lightcoral' : 'aqua';
+        })
+
+     </script>
+
+</body>
+</html>
