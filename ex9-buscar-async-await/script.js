@@ -15,16 +15,37 @@ document.getElementById("fetchUser").addEventListener("click", async function ()
     // Juntos, tornam o código mais legível, eliminando a necessidade de cadeias complexas de .then() e .catch().
 
     // Faz a requisição à API usando fetch e espera a resposta (await)
-    // const response = await fetch('https://jsonplaceholder.typicode.com/users/5');
+    const response = await fetch('https://jsonplaceholder.typicode.com/users/5');
 
     // Verifica se a resposta da API foi bem-sucedida (status 200-299)
-
-    // 1ª Digitação (Aqui)
+    if (!response.ok) {
+      throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`); // Lança um erro personalizado
+    }
 
     // Converte a resposta para JSON e espera o resultado (await)
+    const user = await response.json();
     
+    // Mostra no Alert
+    alert (
+      'Dados dos usuário:\n' +
+      "Nome: " + user.name + "\n" +
+      "Email: " + user.email + "\n" +
+      "Telefone: " + user.phone
+    )
+
+    // Mostra no console
+    console.log("Nome:", user.name);
+    console.log("Email:", user.email);
+    console.log("Telefone:", user.phone);
 
     // Exibe os dados do usuário na página
+    userDataElement.innerHTML = `
+      <h2>Dados do Usuário</h2>
+      <p><strong>Nome:</strong> ${user.name}</p>
+      <p><strong>Email:</strong> ${user.email}</p>
+      <p><strong>Telefone:</strong> ${user.phone}</p> 
+      
+    `;
 
 
   } catch (error) {

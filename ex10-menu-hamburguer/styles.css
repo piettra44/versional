@@ -21,16 +21,18 @@ nav {
 }
 
 /* Estilo do ícone do menu hambúrguer */
-/* .menu-icon {
-
-  2ª Digitação (Aqui) 
-
-} */
+.menu-icon {
+  display: none; /* Esconde o ícone por padrão */
+  font-size: 1.5rem; /* Tamanho do ícone */
+  color: white; /* Cor do ícone */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
 
 /* Estilo da lista de navegação */
 .nav-list {
   display: flex; /* Exibe os itens em linha */
   list-style: none; /* Remove os marcadores de lista */
+  margin-left: auto; /* Move a barra para o lado direito */
 
 /* Move a lista para o lado direito */
   /* margin-left: auto;  */
@@ -48,17 +50,48 @@ nav {
   font-size: 1rem; /* Tamanho da fonte */
 }
 
+/* Criar uma animação */
+@keyframes abrirMenu {
+  from {
+    max-height: 0; /* Altura inicial do menu */
+    opacity: 0; /* Opacidade inicial do menu */
+  }
+  to {
+    max-height: 300px; /* Altura máxima do menu (ajuste conforme necessário) */
+    opacity: 1; /* Opacidade final do menu */
+  }
+}
+
+/* Animação abrir para a direita */
+@keyframes abrirMenuDireita {
+  from { transform: translateX(-100%);}
+  to { transform: translateX(0);}
+    
+}
+
+/* aparecer com Zoom */
+@keyframes abrirMenuZoom {
+  from { transform: scaleY(0); transform-origin: top;}
+  to { transform: scaleY(1); transform-origin: top;}
+    
+}
+
 /* Estilos para telas pequenas (max-width: 768px) */
 @media (max-width: 768px) {
-  /* .menu-icon {
-
-    3ª Digitação (Aqui)
+  .menu-icon {
+    display: block; /* Exibe o ícone do menu hambúrguer em telas pequenas */
     
   }
 
   .nav-list {
-
-  } */
+    display: none; /* Esconde a lista de navegação por padrão em telas pequenas */
+    flex-direction: column; /* Exibe os itens em coluna */
+    position: absolute; /* Posiciona a lista de forma absoluta */
+    top: 60px; /* Ajusta a posição vertical da lista */
+    left: 0; /* Alinha a lista à esquerda */
+    background-color: #333; /* Cor de fundo da lista */
+    width: 100%; /* Largura total da tela */
+  }
 
   .nav-list li {
     margin: 1rem 0; /* Espaçamento entre os itens */
@@ -68,5 +101,6 @@ nav {
   /* Classe ativada via JavaScript para exibir a lista */
   .nav-list.active {
     display: flex; /* Exibe a lista quando a classe "active" é adicionada */
+    animation: abrirMenuZoom 0.3s ease forwards; /* Aplica a animação de abertura */
   }
 }

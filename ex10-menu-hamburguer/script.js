@@ -7,3 +7,4 @@ menuIcon.addEventListener('click', () => {
   // Alterna a classe "active" na lista de navegação
   navList.classList.toggle('active');
 });
+
