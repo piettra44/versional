@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
   <title>Exercício 11b: Gerador de Citações</title>
   <style>
     body {
@@ -13,7 +14,7 @@
       height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      background-color: #bcbcbc;
     }
 
     #quote {
@@ -29,12 +30,12 @@
       cursor: pointer;
       border: none;
       border-radius: 5px;
-      background-color: #28a745;
+      background-color: #6b0303;
       color: white;
     }
 
     button:hover {
-      background-color: #218838;
+      background-color: #000000;
     }
   </style>
 </head>
@@ -47,18 +48,34 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+
     // Array de citações
     const quotes = [
-      "A vida é o que acontece enquanto você está ocupado fazendo outros planos. – John Lennon",
-      "A simplicidade é o último grau de sofisticação. – Leonardo da Vinci",
-      "O sucesso é a soma de pequenos esforços repetidos dia após dia. – Robert Collier",
-      "Acredite que você pode e você já está no meio do caminho. – Theodore Roosevelt",
-      "Não importa o quão devagar você vá, desde que você não pare. – Confúcio"
+      "A vida é 10% o que acontece comigo e 90% como eu reajo a isso. - Charles R. Swindoll",
+      "O sucesso é a soma de pequenos esforços repetidos dia após dia. - Robert Collier",
+      "A única maneira de fazer um excelente trabalho é amar o que você faz. - Steve Jobs",
+      "Não espere por oportunidades, crie-as. - George Bernard Shaw",
+      "Acredite em si mesmo e todo o resto virá naturalmente. - Elissa Goodman",
+      "Faça o que puder, com o que tiver, onde estiver. - Theodore Roosevelt",
+      "O futuro pertence àqueles que acreditam na beleza de seus sonhos. - Eleanor Roosevelt",
+      "A vida é o que acontece enquanto você está ocupado fazendo outros planos. - John Lennon",
+      "Seja a mudança que você deseja ver no mundo. - Mahatma Gandhi",
+      "A mente que se abre a uma nova ideia jamais voltará ao seu tamanho original. - Albert Einstein",
+      "A coragem não é a ausência de medo, mas o domínio sobre ele. - Nelson Mandela",
+      "Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado. - Roberto Shinyashiki",
+      "Não conte os dias, faça os dias contarem. - Muhammad Ali",
     ];
 
-       // 1ª Digitação (Resolva aqui o exercício)
+    // Função para gerar uma nova citação
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = quotes[randomIndex];
+    }
+
+    // Adiciona um evento de clique ao botão para gerar uma nova citação
+    document.getElementById('newQuoteButton').addEventListener('click', generateQuote); 
 
 
-  </script>
+</script>
 </body>
 </html>

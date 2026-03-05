@@ -48,9 +48,42 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+    // Contastantes para selecionar os elementos do DOM
+    const timerDisplay = document.querySelector('#timer'); // Exibe o tempo
+    const startButton = document.querySelector('#startButton'); // Botão para iniciar o temporizador
+    const pauseButton = document.querySelector('#pauseButton'); // Botão para pausar o temporizador
+    const resetButton = document.querySelector('#resetButton'); // Botão para resetar o temporizador
 
+    // Variáveis para armazenar o tempo e o intervalo
+    let time = 0; // Tempo em segundos
+    let interval; // Variável para armazenar o intervalo do temporizador
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    // Função para atualizar o temporizador
+    function updateTimer() {
+      time++; // Aumenta o tempo a cada segundo
+      timerDisplay.textContent = time; // Atualiza o temporizador
+    }
+
+    // Evento de clique para iniciar  temporizador
+    startButton.addEventListener('click', () => {
+      if (!interval) { // Vai verificar se o intervalo já está rodando
+        interval = setInterval(updateTimer, 1000); // Inicia o temporizador a cada 1 segundo
+      }
+    });
+
+    // Evento de clique para pausar o temporizador
+    pauseButton.addEventListener('click', () => {
+      clearInterval(interval); // Para o temporizador
+      interval = null; // Reseta a variável do intervalo para permitir reiniciar
+    });
+
+    // Evento de click para resetar o temporizador
+    resetButton.addEventListener('click', () => {
+      clearInterval(interval); // Para o temporizador
+      interval = null; // Reseta a variável do intervalo
+      time = 0; // Reseta o tempo para zero
+      timerDisplay.textContent = time; // Atualiza o temporizador para mostrar zero
+    });
 
 
   </script>
