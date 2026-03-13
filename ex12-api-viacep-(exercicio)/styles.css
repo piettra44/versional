@@ -1,0 +1,89 @@
+:root {
+    --cor-fundo-1: #ffb5c0;
+    --cor-fundo-2: #FF6FA0;
+    --cor-texto-ligth: #1A0F14;
+    --cor-texto-dark: #F5F5F5;
+    --cor-titulo: #9C1354;
+
+}
+
+body{
+    background-color: var(--cor-fundo-1);
+    color: var(--cor-texto-ligth);
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para mudanças de cor */
+    font-family: 'Bebas Neue' , sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Class dark-mode */
+.dark-mode{
+    background-color: var(--cor-fundo-2);
+    color: var(--cor-texto-dark);
+}
+
+.banner {
+  margin-bottom: 40px;
+}
+
+.banner h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  text-shadow: 6px 6px 6px rgba(179, 17, 106, 0.8);
+  
+}
+
+
+#myButton {
+    background-color: #49031a;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    position: fixed; /* fica fixo na tela */
+    top: 20px; /* distância do topo */
+    right: 40px; /* distância da direita */
+}
+
+#inputCep{
+    padding: 12px;
+    width: 220px;
+    border-radius: 8px;
+    border: 2px solid #FF6FA0;
+    outline: none;
+    font-size: 16px;
+}
+.caixa{
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    
+}
+
+#buscar{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #FF6FA0;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#resultado {
+    color: #1A0F14; /* escuro */
+    font-weight: 500;
+}

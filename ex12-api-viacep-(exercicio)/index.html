@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API ViaCEP</title>
+    <!-- CSS -->
+     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+     
+</head>
+<body>
+    <main>
+            <section class="banner">
+
+                <div class="container-conteudo-banner">
+                <h1 id="titulo"></h1>
+
+                </div>
+            </section>
+
+
+    <div class="caixa">
+    <!-- Espaço para inserir o CEP e fazer a busca na API -->
+        <input type="text" id="cep" placeholder="Digite o CEP">
+
+        <br><br>
+
+        <button id="buscar">Buscar</button>
+        <!-- Área para exibir os resultados da busca -->
+        <div id="resultado"></div>
+        
+    </div>
+
+    <div class="dark">
+    <!-- Botão modo claro/escuro -->
+        <button id="myButton">Modo Escuro</button>
+    </div>
+    
+
+    <!-- Conexão com o JavaScript -->
+    <script src="script.js"></script>
+
+
+</body>
+</html>
