@@ -54,7 +54,6 @@ btnBuscar.addEventListener('click', () => {
         // Exibe os resultados da busca
         resultadoDiv.innerHTML = `
           <p><strong>Rua:</strong> ${data.logradouro}</p>
-          <p><strong>Complemento:</strong> ${data.complemento}</p>
           <p><strong>Bairro:</strong> ${data.bairro}</p>
           <p><strong>Localidade:</strong> ${data.localidade}</p>
           <p><strong>UF:</strong> ${data.uf}</p>
